@@ -1,3 +1,4 @@
+//priting info
 const name = "Gaspar Saldana";
 const age = 29;
 const email = "gaspar.saldana.sandoval@gmail.com";

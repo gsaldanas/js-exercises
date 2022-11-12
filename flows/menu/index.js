@@ -2,7 +2,8 @@
 import rl from "readline-sync";
 //variables
 let condition = true;
-const menu = ["START F1", "START F2", "START F3", "START F4", "STOP"];
+const menu = ["Add name", "Display names", "START F3", "START F4", "STOP"];
+const names = [];
 
 //functions
 const showMenu = function () {
@@ -12,12 +13,21 @@ const showMenu = function () {
     counter++;
   });
 };
-const progamF1 = function () {
-  console.log("ik ben F1");
+const inputNames = function () {
+  let namesPeople = rl.question("Enter a name: ");
+  names.push(namesPeople);
 };
-const progamF2 = function () {
-  console.log("ik ben F2");
+const displayNames = function () {
+  if (names.length === 0) {
+    console.log("Not yet added names");
+  }
+  console.log("Display the names:");
+  console.log("Number of names " + names.length);
+  for (let i = 0; i < names.length; i++) {
+    console.log(names[i]);
+  }
 };
+
 const progamF3 = function () {
   console.log("ik ben F3");
 };
@@ -29,13 +39,12 @@ const progamF4 = function () {
 while (condition) {
   showMenu();
   let input = rl.prompt();
-  console.log(input);
   switch (input) {
     case "1":
-      progamF1();
+      inputNames();
       break;
     case "2":
-      progamF2();
+      displayNames();
       break;
     case "3":
       progamF3();
@@ -47,6 +56,6 @@ while (condition) {
       condition = false;
       console.log(`You stopped the program`);
     default:
-      console.log(`Choose the correct input`);
+      console.log(`Plz choose the correct input`);
   }
 }

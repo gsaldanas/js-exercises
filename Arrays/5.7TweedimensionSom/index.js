@@ -10,6 +10,16 @@ let sumRowNumbers = spreadsheet.map(function (e) {
   }, 0);
 });
 console.log(sumRowNumbers);
+
+let rowNumber = 1;
+sumRowNumbers.forEach((element) => {
+  console.log("Total sum row number " + rowNumber + "--> " + element);
+  rowNumber++;
+});
+const totalSum = sumRowNumbers.reduce(function (acc, e) {
+  return acc + e;
+}, 0);
+console.log("sum of all elements " + totalSum);
 // /*console log prints*/
 // let printSpreadSheet = spreadsheet.forEach((element) => {
 //   console.log(element);

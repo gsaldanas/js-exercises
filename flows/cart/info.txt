@@ -1,0 +1,13 @@
+CHALLENGE 4:
+Create a Cart object constructor
+	- the cart holds cartitems with a list of products that are bought
+	- every cartitem has:
+		- productId
+		- productTitle
+		- productPrice
+		- amount
+	- it has the ability to add new cartitems
+	- it has the ability to remove based on ID
+	- it has the ability to calculate the number of total cartitems
+	- it has the ability to calculate the number of total products
+	- it has the ability to calculate the total cost of the order (edited) 

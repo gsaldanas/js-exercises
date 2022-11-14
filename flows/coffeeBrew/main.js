@@ -24,18 +24,23 @@ let arrCoffeeTypes = [
 ];
 //total coffees
 
-// function aantalCoffees(arrTypes) {
-//   let aantal = [];
-// //   arrTypes.forEach(function (coffeeType) {
-// //     let a = coffees.reduce(function (acc, e) {
-// //       if (e.type == coffeeType) {
-// //         acc + 1;
-// //       }
-// //     }, 0);
-// //     aantal.push(a);
-// //   });
-//   //display
-//   aantal.forEach(function (e, idx) {
-//     console.log(arrTypes[idx] + "---> " + aantal[idx]);
-//   });
-// }
+function filterCoffeesTypes(coffeeType) {
+  return coffees.filter(function (e) {
+    return e.type == coffeeType;
+  });
+}
+
+function aantalCoffees(arrTypes) {
+  let aantal = [];
+  arrTypes.forEach(function (coffeeType) {
+    aantal.push(filterCoffeesTypes(coffeeType));
+  });
+  console.log(aantal);
+  //   //display
+  aantal.forEach(function (e, idx) {
+    if (aantal[idx].length !== 0) {
+      console.log(arrTypes[idx] + "---> " + aantal[idx].length);
+    }
+  });
+}
+aantalCoffees(arrCoffeeTypes);
